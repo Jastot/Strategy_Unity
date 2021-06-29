@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace DefaultNamespace
@@ -6,8 +8,8 @@ namespace DefaultNamespace
     public class SelectedItemView: MonoBehaviour
     {
         [SerializeField] private Image _image;
-        [SerializeField] private Text _name;
-        [SerializeField] private Text _health;
+        [SerializeField] private TextMeshProUGUI _name;
+        [SerializeField] private TextMeshProUGUI _health;
         [SerializeField] private Slider _heathBar;
 
         public Sprite Icon

@@ -10,14 +10,18 @@ namespace DefaultNamespace
         [SerializeField] private SelectedItemModel _selectedItemModel;
         private void Update()
         {
-            if (!Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0))
             {
                 if(Physics.Raycast(_camera.ScreenPointToRay(Input.mousePosition), out var infoHit))
                 {
                     var building = infoHit.collider.gameObject.GetComponent<ISelectableItem>();
                     if (building != null)
                     {
-                        _selectedItemModel.Value = building;
+                        _selectedItemModel.SetValue(building);
+                    }
+                    else
+                    {
+                        _selectedItemModel.SetValue(null);
                     }
                 }
             }

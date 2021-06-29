@@ -1,7 +1,10 @@
-﻿namespace DefaultNamespace
+﻿using UnityEngine;
+
+namespace DefaultNamespace
 {
-    public class Command
+    public class ProduceUnitCommand: IProduceUnitCommand
     {
-        
+        [InjectAsset("Ellen")]private GameObject _unitPrefab;
+        public GameObject UnitPrefab => _unitPrefab;
     }
 }
