@@ -6,7 +6,7 @@ namespace DefaultNamespace.CommandExecutors
     {
         protected override void ExecuteSpecificCommand(IProduceUnitCommand command)
         {
-            Debug.Log("produce unit");
+            Instantiate(command.UnitPrefab,(transform.position+Vector3.forward*2),Quaternion.identity);
         }
     }
 }

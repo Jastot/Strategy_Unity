@@ -3,6 +3,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace DefaultNamespace
 {
@@ -11,6 +12,8 @@ namespace DefaultNamespace
 
         [SerializeField] private SelectedItemModel _model;
         [SerializeField] private ControllerButtonPanelView _view;
+
+        [Inject] private ControlButtonPanel _controlButtonPanel;
 
         private void Start()
         {
@@ -22,6 +25,7 @@ namespace DefaultNamespace
         private void OnClick(ICommandExecutor executor)
         {
            // executor.Execute(new ProduceUnitCommand(null));
+           _controlButtonPanel.HandleClick(executor);
         }
 
         private void SetButtons()
@@ -31,7 +35,6 @@ namespace DefaultNamespace
             {
                 return;
             }
-            
             var executors = 
                 (_model.Value as Component)?.GetComponents<ICommandExecutor>().ToList();
             _view.SetButtons(executors);

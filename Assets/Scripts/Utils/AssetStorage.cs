@@ -16,7 +16,7 @@ namespace DefaultNamespace
            return _assets.FirstOrDefault(assets => assets.name == name);
         }
 
-        public void Inject<T>(T target) where T :class
+        public T Inject<T>(T target) where T :class
         {
             var targetType = target.GetType();
             var fields = targetType.GetFields(BindingFlags.Public | BindingFlags.NonPublic |BindingFlags.Instance|BindingFlags.DeclaredOnly);
@@ -30,6 +30,8 @@ namespace DefaultNamespace
                     field.SetValue(target,asset);
                 }
             }
+
+            return target;
         }
     }
 }

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Strategy_Storages_AssetStorage
   m_EditorClassIdentifier: 
   _assets:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 4046585175191654027, guid: 078c0adb2bb0b0a49b0b619b7dd46eb0, type: 3}
+  - {fileID: 4046585175191654027, guid: 078c0adb2bb0b0a49b0b619b7dd46eb0, type: 3}
