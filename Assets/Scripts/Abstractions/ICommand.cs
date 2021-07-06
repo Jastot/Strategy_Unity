@@ -23,12 +23,12 @@ namespace DefaultNamespace
 
     public interface IHoldPosition : ICommand
     {
-        
+        bool Holding { get; }
     }
     
     public interface IStopCommand : ICommand
     {
-        
+        Vector3 PositionOfUnit { get; }
     }
     public interface IProduceUnitCommand : ICommand
     {

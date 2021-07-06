@@ -15,9 +15,12 @@ namespace DefaultNamespace
         [SerializeField] private Button _holdPosition;
         [SerializeField] private Button _stopButton;
 
+        private Color Normal = Color.white;
+        private Color Pressed = Color.green;
+        
         private Dictionary<Type, Button> _executorsToButtonsDictionary;
 
-        public event Action<ICommandExecutor> OnClick;
+        public event Action<ICommandExecutor,Button> OnClick;
         private void Awake()
         {
             _executorsToButtonsDictionary = new Dictionary<Type, Button>()
@@ -52,8 +55,33 @@ namespace DefaultNamespace
                     continue;
                 }
                 button.gameObject.SetActive(true);
-                button.onClick.AddListener(()=>OnClick?.Invoke(commandExecutor));
+                button.onClick.AddListener(() =>
+                {
+                    Button buffButton = null;
+                    if (button.gameObject.GetComponent<HoldingButtonView>())
+                    {
+                        MakeButtonIsPressed(button);
+                        buffButton = button;
+                    }
+                    OnClick?.Invoke(commandExecutor,buffButton);
+                });
             }
+        }
+
+        public void MakeButtonIsPressed(Button button)
+        {
+            var buttonColors = button.colors;
+            if (buttonColors.normalColor == Normal)
+            {
+                buttonColors.normalColor = Pressed;
+                buttonColors.selectedColor = Pressed;
+            }
+            else
+            {
+                buttonColors.normalColor = Normal;
+                buttonColors.selectedColor = Normal;
+            }
+            button.colors = buttonColors;
         }
     }
 }

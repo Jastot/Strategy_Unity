@@ -14,7 +14,7 @@ namespace DefaultNamespace
         [SerializeField] private ControllerButtonPanelView _view;
 
         [Inject] private ControlButtonPanel _controlButtonPanel;
-
+        [Inject] private HoldPositionModel _holdPositionModel;
         private void Start()
         {
             _model.OnUpdated += SetButtons;
@@ -22,19 +22,24 @@ namespace DefaultNamespace
             SetButtons();
         }
 
-        private void OnClick(ICommandExecutor executor)
+        private void OnClick(ICommandExecutor executor,Button button)
         {
-           // executor.Execute(new ProduceUnitCommand(null));
-           _controlButtonPanel.HandleClick(executor);
+            if (button != null)
+            {
+                _holdPositionModel.SetValue(!_holdPositionModel.Value);
+            }
+            _controlButtonPanel.HandleClick(executor,_holdPositionModel);
         }
 
         private void SetButtons()
         {
             _view.ClearButtons();
+            _view.gameObject.SetActive(false);
             if (_model.Value == null)
             {
                 return;
             }
+            _view.gameObject.SetActive(true);
             var executors = 
                 (_model.Value as Component)?.GetComponents<ICommandExecutor>().ToList();
             _view.SetButtons(executors);

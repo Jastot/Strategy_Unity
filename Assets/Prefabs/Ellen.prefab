@@ -3503,6 +3503,10 @@ GameObject:
   - component: {fileID: 5693774368603109954}
   - component: {fileID: 3465535920978381274}
   - component: {fileID: 1667865095429158103}
+  - component: {fileID: 8053932556200571651}
+  - component: {fileID: 7348110688499809253}
+  - component: {fileID: 6927166659995026644}
+  - component: {fileID: 3516107061863039897}
   m_Layer: 0
   m_Name: Ellen
   m_TagString: Untagged
@@ -3557,6 +3561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f9c56be5d7c4c1e844f06ae56b69dc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _agent: {fileID: 8053932556200571651}
 --- !u!114 &5693774368603109954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3591,5 +3596,71 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aeca906b272545b3921ab9d16f0d3384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _agent: {fileID: 8053932556200571651}
+--- !u!195 &8053932556200571651
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4046585175191654027}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &7348110688499809253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4046585175191654027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f786a377040c4c21b4394053c586ddf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 21300000, guid: c5e0b96d43ff045479601003fe4e9e70, type: 3}
+  _name: Ellen
+  _maxHealth: 300
+  _health: 300
+  mainObject: {fileID: 4046585175191654027}
+--- !u!136 &6927166659995026644
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4046585175191654027}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1.749723
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.7927191, z: 0}
+--- !u!114 &3516107061863039897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4046585175191654027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dc27d3f526e4336b9b6cb73cf2284b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

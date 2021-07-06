@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
+using UnityEngine.AI;
 
 namespace DefaultNamespace.CommandExecutors
 {
     public class MoveCommandExecutor: CommandExecutorBase<IMoveCommand>
     {
+        [SerializeField] private NavMeshAgent _agent;
+        
         protected override void ExecuteSpecificCommand(IMoveCommand command)
         {
-            Debug.Log("Go to");
+            _agent.SetDestination(command.To);
         }
     }
 }

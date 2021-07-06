@@ -19,5 +19,6 @@ namespace DefaultNamespace
         public Sprite Icon => _icon;
 
         public GameObject Object => mainObject;
+        public Vector3 CurrentPosition => transform.position;
     }
 }

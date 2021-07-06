@@ -8,6 +8,8 @@ namespace DefaultNamespace
         [SerializeField] private Camera _camera;
         [SerializeField] private EventSystem _eventSystem;
         [SerializeField] private SelectedItemModel _selectedItemModel;
+        [SerializeField] private GroundClickModel _currentGroundClick;
+        [SerializeField] private HoldPositionModel _holdPositionModel;
         private void Update()
         {
             if (_eventSystem.IsPointerOverGameObject())
@@ -26,6 +28,10 @@ namespace DefaultNamespace
                     }
                     else
                     {
+                        if (!_holdPositionModel)
+                        {
+                            _currentGroundClick.SetValue(infoHit.point);
+                        }
                         _selectedItemModel.SetValue(null);
                     }
                 }
@@ -35,7 +41,7 @@ namespace DefaultNamespace
             {
                 if (Physics.Raycast(_camera.ScreenPointToRay(Input.mousePosition), out var infoHit))
                 {
-                    
+                    Debug.Log("Right");
                 }
             }
         }
