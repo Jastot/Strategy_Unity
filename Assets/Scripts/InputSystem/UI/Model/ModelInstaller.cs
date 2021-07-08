@@ -24,7 +24,7 @@ namespace DefaultNamespace
             Container.Bind<IAwaitable<bool>>().FromInstance(_holdPositionModel).AsSingle();
             _holdPositionModel.SetValue(false);
             Container.Bind<ControlButtonPanel>().AsSingle();
-
+            
             Container.Bind<CommandCreator<IHoldPosition>>().To<HoldPositionUnitCommandCreator>().AsSingle();
             Container.Bind<CommandCreator<IProduceUnitCommand>>().To<ProduceUnitCommandCreator>().AsSingle();
             Container.Bind<CommandCreator<IAttackCommand>>().To<AttackCommandCreator>().AsSingle();

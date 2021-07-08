@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
+using Zenject;
 
 namespace DefaultNamespace
 {
@@ -25,6 +26,8 @@ namespace DefaultNamespace
                     if (building != null)
                     {
                         _selectedItemModel.SetValue(building);
+
+                        
                     }
                     else
                     {
