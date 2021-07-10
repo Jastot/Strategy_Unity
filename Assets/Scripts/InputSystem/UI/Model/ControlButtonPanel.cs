@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using Abstractions;
+using UnityEngine;
 using Zenject;
 using Zenject.ReflectionBaking.Mono.Cecil.Cil;
 
-namespace DefaultNamespace
+namespace Model
 {
     public class ControlButtonPanel
     {

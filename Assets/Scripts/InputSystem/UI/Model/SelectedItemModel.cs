@@ -1,7 +1,8 @@
 ﻿using System;
+using Abstractions;
 using UnityEngine;
 
-namespace DefaultNamespace
+namespace Model
 {
     [CreateAssetMenu(fileName = "Strategy/Models/"+nameof(SelectedItemModel))]
     public class SelectedItemModel : ScriptableObject

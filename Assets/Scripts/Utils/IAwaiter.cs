@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 
-namespace DefaultNamespace
+namespace Utils
 {
     public interface IAwaiter<TResult> : INotifyCompletion
     { 

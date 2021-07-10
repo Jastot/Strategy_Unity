@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 
-namespace DefaultNamespace
+namespace Utils
 {
     public static class AsyncUtils
     {

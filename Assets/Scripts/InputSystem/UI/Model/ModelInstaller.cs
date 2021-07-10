@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using Abstractions;
+using UnityEngine;
+using Utils;
 using Zenject;
 
-namespace DefaultNamespace
+namespace Model
 {
     public class ModelInstaller: MonoInstaller
     {

@@ -1,8 +1,9 @@
 ﻿using System.Threading.Tasks;
+using Abstractions;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace DefaultNamespace.CommandExecutors
+namespace Core.CommandExecutors
 {
     public class PatrolCommandExecutor: CommandExecutorBase<IPatrolCommand>
     {

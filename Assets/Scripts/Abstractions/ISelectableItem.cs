@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
+using UniRx;
+using System;
 
-namespace DefaultNamespace
+namespace Abstractions
 {
     public interface ISelectableItem
     {
         GameObject Object { get; }
         string Name { get; }
-        float Health { get; }
+        IObservable<float> Health { get; }
         float MaxHealth { get; }
         Sprite Icon { get; } 
         Vector3 CurrentPosition { get; }

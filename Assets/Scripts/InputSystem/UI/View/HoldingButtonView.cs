@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace DefaultNamespace
+namespace View
 {
     public class HoldingButtonView: MonoBehaviour
     {

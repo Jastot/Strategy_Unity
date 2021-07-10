@@ -1,6 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using Abstractions;
+using UnityEngine;
+using UniRx;
 
-namespace DefaultNamespace
+namespace Core
 {
     public class Unit: MonoBehaviour, ISelectableItem
     {
@@ -14,8 +17,20 @@ namespace DefaultNamespace
         public Sprite Icon => _icon;
         public GameObject Object => mainObject;
         public string Name => _name;
-        public float Health => _health;
+        public IObservable<float> Health => _reactiveHealth;
         public float MaxHealth => _maxHealth;
         public Vector3 CurrentPosition => transform.position;
+        
+        private ReactiveProperty<float> _reactiveHealth;
+
+        private void Awake()
+        {
+            _reactiveHealth = new ReactiveProperty<float>(_health);
+        }
+
+        private void Update()
+        {
+            _reactiveHealth.Value -= 0.01f;
+        }
     }
 }

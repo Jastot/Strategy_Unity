@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using UnityEngine;
 
-namespace DefaultNamespace
+namespace Utils
 {
     [CreateAssetMenu(fileName = "Strategy/Storages/"+nameof(AssetStorage))]
     public class AssetStorage : ScriptableObject

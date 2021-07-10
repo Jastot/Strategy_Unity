@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+﻿using Abstractions;
+using UnityEngine;
 using UnityEngine.AI;
 
-namespace DefaultNamespace.CommandExecutors
+namespace Core.CommandExecutors
 {
     public class MoveCommandExecutor: CommandExecutorBase<IMoveCommand>
     {

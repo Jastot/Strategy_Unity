@@ -6,7 +6,8 @@
         "View",
         "Abstractions",
         "Unity.TextMeshPro",
-        "Utils"
+        "Utils",
+        "UniRx"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

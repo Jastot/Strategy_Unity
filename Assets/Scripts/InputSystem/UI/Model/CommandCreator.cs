@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Threading;
+using Abstractions;
 using UnityEngine;
+using Utils;
 using Zenject;
 
-namespace DefaultNamespace
+namespace Model
 {
     public abstract class CommandCreator<T> where T : ICommand
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DefaultNamespace
+namespace Utils
 {
     [AttributeUsage(AttributeTargets.Field)]
     public class InjectAssetAttribute: Attribute

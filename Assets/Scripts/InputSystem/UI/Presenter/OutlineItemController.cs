@@ -1,7 +1,9 @@
 ﻿using System;
+using Abstractions;
+using Model;
 using UnityEngine;
 
-namespace DefaultNamespace
+namespace Presenter
 {
     public class OutlineItemController: MonoBehaviour
     {

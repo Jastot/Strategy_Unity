@@ -1,7 +1,8 @@
 ﻿using System;
 using UnityEngine;
+using Utils;
 
-namespace DefaultNamespace
+namespace Model
 {
      public abstract class ScriptableObjectContainerBase<T> : ScriptableObject, IAwaitable<T>
     {

@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+﻿using Abstractions;
+using UnityEngine;
 using Zenject;
 
-namespace DefaultNamespace.CommandExecutors
+namespace Core.CommandExecutors
 {
     public class HoldPositionExecutor: CommandExecutorBase<IHoldPosition>
     {

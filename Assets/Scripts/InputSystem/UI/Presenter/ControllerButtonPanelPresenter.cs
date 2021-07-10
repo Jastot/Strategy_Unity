@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Linq;
+using Abstractions;
+using Model;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using View;
 using Zenject;
 
-namespace DefaultNamespace
+namespace Presenter
 {
     public class ControllerButtonPanelPresenter: MonoBehaviour
     {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace DefaultNamespace
+namespace Model
 { 
     [CreateAssetMenu(fileName = "Strategy/Models/"+nameof(HoldPositionModel))] 
     public class HoldPositionModel: ScriptableObjectContainerBase<bool> 

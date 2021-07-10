@@ -1,4 +1,6 @@
-﻿namespace DefaultNamespace.CommandExecutors
+﻿using Abstractions;
+
+namespace Core.CommandExecutors
 {
     public class StopCommandExecutor: CommandExecutorBase<IStopCommand>
     {
